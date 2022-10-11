@@ -6,12 +6,13 @@ class Solution
 	public:
 		long sum_of_gp(long n,long a, long r)
 		{
-		    float sum=0;
-		    if(r<1)
-		        sum = a*(1-pow(r,n))/(1-r);
+		    double sum=0;
+		    if(r==1)
+		        sum = n*a;
+		    else if(r<1)
+		        sum = (long)((a*(1-pow(r,n)))/(double)(1-r));
 		    else 
-		        sum = a*(pow(r,n)-1)/(r-1);
-                cout <<(pow(r,n)-1)<<endl;
+		        sum = (long)((a*(pow(r,n)-1))/(r-1));
 		 
 		    return sum;
 		}
